@@ -164,11 +164,8 @@ export function Home({ lang }: { lang: Locale }) {
         </section>
 
         <section id="contato" className="mx-auto max-w-6xl scroll-mt-16 px-4 pb-24 sm:px-6">
-          <div className="relative overflow-hidden rounded-3xl border border-line bg-surface-2 px-6 py-16 text-center sm:px-12">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -bottom-32 left-1/2 h-64 w-[640px] -translate-x-1/2 rounded-full bg-accent/25 blur-[100px]"
-            />
+          {/* Quadro em cinza prateado, como os cartões da landing page. */}
+          <div className="relative overflow-hidden rounded-3xl border border-[#55565b] bg-[linear-gradient(160deg,#4a4b50_0%,#2e2f33_55%,#232427_100%)] px-6 py-16 text-center sm:px-12">
             <h2 className="relative text-3xl font-semibold tracking-tight sm:text-4xl">
               {t.contact.title}
             </h2>
