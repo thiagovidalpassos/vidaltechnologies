@@ -34,7 +34,7 @@ export function ServiceCards({ items }: { items: Service[] }) {
             }}
             className={`group relative cursor-pointer overflow-hidden rounded-md border transition-all duration-500 ease-[cubic-bezier(.6,.1,.2,1)] ${
               isOpen
-                ? "h-[460px] border-accent bg-accent text-accent-ink sm:h-[380px] md:h-auto md:flex-1"
+                ? "h-[400px] border-accent bg-accent text-accent-ink sm:h-[340px] md:h-auto md:flex-1"
                 : "h-[58px] border-[#242424] bg-[#1c1c1c] hover:bg-[#222] md:h-auto md:flex-[0_0_96px]"
             }`}
           >
