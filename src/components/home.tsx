@@ -164,12 +164,12 @@ export function Home({ lang }: { lang: Locale }) {
         </section>
 
         <section id="contato" className="mx-auto max-w-6xl scroll-mt-16 px-4 pb-24 sm:px-6">
-          {/* Quadro em cinza prateado, como os cartões da landing page. */}
-          <div className="relative overflow-hidden rounded-3xl border border-[#55565b] bg-[linear-gradient(160deg,#4a4b50_0%,#2e2f33_55%,#232427_100%)] px-6 py-16 text-center sm:px-12">
+          {/* Quadro em cinza claro, como o cartão "Projeto em destaque" da landing page. */}
+          <div className="relative overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#e9e9e9,#9b9b9b)] px-6 py-16 text-center text-[#111] sm:px-12">
             <h2 className="relative text-3xl font-semibold tracking-tight sm:text-4xl">
               {t.contact.title}
             </h2>
-            <p className="relative mx-auto mt-4 max-w-lg text-muted">{t.contact.text}</p>
+            <p className="relative mx-auto mt-4 max-w-lg text-[#333]">{t.contact.text}</p>
             <div className="relative mt-8 flex flex-wrap justify-center gap-3">
               <a
                 href="mailto:contato@vidaltechnologies.com.br"
@@ -181,7 +181,7 @@ export function Home({ lang }: { lang: Locale }) {
                 href={`https://wa.me/5541988779179?text=${encodeURIComponent(t.contact.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 font-semibold transition hover:border-[#25D366]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#111]/40 px-6 py-3 font-semibold transition hover:border-[#111]"
               >
                 <WhatsAppIcon />
                 {t.contact.whatsapp}
