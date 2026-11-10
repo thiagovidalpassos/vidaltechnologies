@@ -90,7 +90,7 @@ export function ServiceCards({ items }: { items: Service[] }) {
             <div
               className={`grid gap-6 px-4 pb-5 pt-5 transition-all duration-300 lg:grid-cols-[minmax(0,1fr)_220px] xl:grid-cols-[minmax(0,1fr)_260px] lg:gap-8 lg:px-6 ${
                 isOpen ? "translate-y-0 opacity-100 delay-300" : "pointer-events-none translate-y-2 opacity-0"
-              } md:w-[400px] lg:w-[540px] xl:w-[670px]`}
+              } md:w-[400px] lg:w-[660px] xl:w-[790px]`}
             >
               <div>
                 <h3 className="text-2xl font-semibold tracking-tight">{s.title}</h3>
