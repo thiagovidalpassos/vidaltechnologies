@@ -54,18 +54,29 @@ export function Home({ lang }: { lang: Locale }) {
                 {t.hero.titleStart} <span className="text-accent">{t.hero.titleAccent}</span>.
               </h1>
               <p className="max-w-xl text-lg leading-relaxed text-muted">{t.hero.text}</p>
-              <div className="flex flex-wrap gap-3">
+              {/* Baixa o catálogo no idioma da página. Os PDFs ficam na pasta
+                  catalogo/ da Hostinger, fora deste projeto. */}
+              <div>
                 <a
-                  href="#contato"
-                  className="rounded-full bg-accent px-6 py-3 font-semibold text-accent-ink transition hover:brightness-110"
+                  href={t.hero.catalogFile}
+                  download
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-accent py-3 pl-5 pr-6 font-semibold text-accent-ink transition hover:brightness-110"
                 >
-                  {t.hero.primary}
-                </a>
-                <a
-                  href="#servicos"
-                  className="rounded-full border border-line px-6 py-3 font-semibold transition hover:border-foreground"
-                >
-                  {t.hero.secondary}
+                  <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                  </svg>
+                  {t.hero.catalog}
                 </a>
               </div>
             </div>

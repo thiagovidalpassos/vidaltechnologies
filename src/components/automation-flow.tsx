@@ -145,7 +145,13 @@ const icons: Record<StepKey, { viewBox: string; size: number; body: ReactNode }>
   trigger: {
     viewBox: "0 0 24 24",
     size: 30,
-    body: <path d="M14 3 6 14h6l-2 7 8-11h-6l2-7Z" {...stroke} />,
+    // Uma pessoa com um "+": um contato novo chegando.
+    body: (
+      <>
+        <circle cx="9" cy="7" r="4" {...stroke} />
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M19 8v6M22 11h-6" {...stroke} />
+      </>
+    ),
   },
   ai: { viewBox: "0 0 318 221", size: 40, body: null },
   check: {
@@ -198,10 +204,22 @@ const icons: Record<StepKey, { viewBox: string; size: number; body: ReactNode }>
       </>
     ),
   },
+  // O CRM é uma tabela no Supabase, então o nó mostra o logo dele.
   crm: {
-    viewBox: "0 0 24 24",
-    size: 30,
-    body: <path d="M4 5h16v14H4ZM4 10h16M4 15h16M10 5v14" {...stroke} />,
+    viewBox: "0 0 109 113",
+    size: 32,
+    body: (
+      <>
+        <path
+          fill="#249361"
+          d="M63.708 110.284c-2.86 3.601-8.658 1.628-8.727-2.97l-1.007-67.251h45.22c8.19 0 12.758 9.46 7.665 15.874l-43.151 54.347Z"
+        />
+        <path
+          fill="#3ecf8e"
+          d="M45.317 2.071c2.86-3.601 8.657-1.628 8.726 2.97l.442 67.251H9.831c-8.19 0-12.759-9.46-7.665-15.875L45.317 2.071Z"
+        />
+      </>
+    ),
   },
   followup: {
     viewBox: "0 0 24 24",
