@@ -11,6 +11,7 @@ const INTERVAL = 6000;
 // Cartões numerados da seção Serviços, iguais aos da landing page: um fica
 // aberto em dourado e os outros fechados ao lado. A troca automática só começa
 // quando a seção aparece na tela, sempre a partir do 01, e para quando ela sai.
+// Ao voltar para a seção, recomeça no 01.
 // Clicar num cartão abre ele na hora e a contagem recomeça dali. Quem pediu
 // menos movimento no sistema troca só clicando.
 export function ServiceCards({ items }: { items: Service[] }) {
@@ -21,7 +22,14 @@ export function ServiceCards({ items }: { items: Service[] }) {
   useEffect(() => {
     const el = row.current;
     if (!el) return;
-    const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.4 });
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        // Toda vez que a seção volta para a tela, recomeça no 01.
+        if (entry.isIntersecting) setOpen(0);
+        setVisible(entry.isIntersecting);
+      },
+      { threshold: 0.4 },
+    );
     io.observe(el);
     return () => io.disconnect();
   }, []);
