@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { AutomationFlow } from "@/components/automation-flow";
-import { Gem } from "@/components/gem";
 import { Logo } from "@/components/logo";
 import { ServiceCards } from "@/components/service-cards";
 import { StarField } from "@/components/star-field";
@@ -50,8 +49,6 @@ export function Home({ lang }: { lang: Locale }) {
             aria-hidden
             className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/20 blur-[140px]"
           />
-          <Gem className="bottom-[6%] right-[5%] hidden w-16 md:block" />
-          <Gem className="left-[3%] top-[12%] hidden w-9 md:block" delay={-4} />
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 md:py-28 lg:grid-cols-[1fr_1.15fr]">
             <div className="flex flex-col gap-8">
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
@@ -84,9 +81,8 @@ export function Home({ lang }: { lang: Locale }) {
 
         <section
           id="servicos"
-          className="relative mx-auto grid max-w-6xl scroll-mt-16 px-4 py-24 sm:px-6 lg:grid-cols-[104px_minmax(0,1fr)] lg:gap-6"
+          className="mx-auto grid max-w-6xl scroll-mt-16 px-4 py-24 sm:px-6 lg:grid-cols-[104px_minmax(0,1fr)] lg:gap-6"
         >
-          <Gem className="right-6 top-12 hidden w-14 md:block" delay={-2} />
           {/* Marca na vertical ao lado dos serviços, como na landing page. */}
           <div
             aria-hidden
@@ -104,8 +100,7 @@ export function Home({ lang }: { lang: Locale }) {
           </div>
         </section>
 
-        <section id="como-trabalho" className="relative scroll-mt-16 overflow-hidden border-y border-line/60 bg-surface/60">
-          <Gem className="bottom-[10%] right-[3%] hidden w-20 md:block" delay={-6} />
+        <section id="como-trabalho" className="scroll-mt-16 border-y border-line/60 bg-surface/60">
           <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.process.title}</h2>
             <ol className="mt-10 grid gap-10 md:grid-cols-3">
@@ -180,8 +175,6 @@ export function Home({ lang }: { lang: Locale }) {
               aria-hidden
               className="pointer-events-none absolute -bottom-32 left-1/2 h-64 w-[640px] -translate-x-1/2 rounded-full bg-accent/25 blur-[100px]"
             />
-            <Gem className="left-[7%] top-[20%] hidden w-16 md:block" />
-            <Gem className="bottom-[16%] right-[9%] hidden w-11 md:block" delay={-3} />
             <h2 className="relative text-3xl font-semibold tracking-tight sm:text-4xl">
               {t.contact.title}
             </h2>
