@@ -87,11 +87,11 @@ export function Home({ lang }: { lang: Locale }) {
 
         <section id="servicos" className="relative scroll-mt-16">
           {/* Marca na vertical encostada na borda esquerda da tela, como na landing page,
-              no tamanho grande e centralizada na altura dos cartões (passa 60px em cima e 20px embaixo).
+              no tamanho grande e centralizada na altura dos cartões (o mesmo tamanho e posição aprovados no Mac do Thiago).
               Fica fora da coluna do conteúdo para os títulos continuarem alinhados. */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-3 top-[116px] hidden h-[480px] select-none items-end overflow-hidden font-logo text-[96px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 xl:flex"
+            className="pointer-events-none absolute left-3 top-[76px] hidden h-[560px] select-none items-end overflow-hidden font-logo text-[112px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 xl:flex"
           >
             <span>
               <span className="font-extrabold">vidal</span>—tech
