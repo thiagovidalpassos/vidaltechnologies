@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { AutomationFlow } from "@/components/automation-flow";
 import { Logo } from "@/components/logo";
+import { ServiceCards } from "@/components/service-cards";
+import { StarField } from "@/components/star-field";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { dictionaries, htmlLang, localePath, type Locale } from "@/i18n/dictionaries";
@@ -13,6 +15,7 @@ export function Home({ lang }: { lang: Locale }) {
 
   return (
     <div lang={htmlLang[lang]} className="flex flex-1 flex-col">
+      <StarField />
       <header className="sticky top-0 z-10 border-b border-line/60 bg-background/80 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
           <Link
@@ -76,30 +79,28 @@ export function Home({ lang }: { lang: Locale }) {
           <div className="h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
         </section>
 
-        <section id="servicos" className="mx-auto max-w-6xl scroll-mt-16 px-4 py-24 sm:px-6">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.services.title}</h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {t.services.items.map((s) => (
-              <article
-                key={s.title}
-                className="flex flex-col gap-3 rounded-2xl border border-line/60 bg-surface-2 p-6 transition hover:border-accent/60"
-              >
-                <h3 className="text-xl font-semibold text-accent">{s.title}</h3>
-                <p className="leading-relaxed text-muted">{s.text}</p>
-                <ul className="mt-2 flex flex-col gap-2 text-sm text-foreground">
-                  {s.examples.map((example) => (
-                    <li key={example} className="flex gap-2.5">
-                      <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                      {example}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+        <section
+          id="servicos"
+          className="mx-auto grid max-w-6xl scroll-mt-16 px-4 py-24 sm:px-6 lg:grid-cols-[104px_minmax(0,1fr)] lg:gap-6"
+        >
+          {/* Marca na vertical ao lado dos serviços, como na landing page. */}
+          <div
+            aria-hidden
+            className="hidden select-none items-end justify-center overflow-hidden font-logo text-[112px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 lg:flex"
+          >
+            <span>
+              <span className="font-extrabold">vidal</span>—tech
+            </span>
+          </div>
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.services.title}</h2>
+            <div className="mt-10">
+              <ServiceCards items={t.services.items} />
+            </div>
           </div>
         </section>
 
-        <section id="como-trabalho" className="scroll-mt-16 border-y border-line/60 bg-surface">
+        <section id="como-trabalho" className="scroll-mt-16 border-y border-line/60 bg-surface/60">
           <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.process.title}</h2>
             <ol className="mt-10 grid gap-10 md:grid-cols-3">
