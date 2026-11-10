@@ -72,9 +72,9 @@ export function ServiceCards({ items }: { items: Service[] }) {
             </span>
 
             <div
-              className={`grid gap-6 px-4 pb-5 pt-5 transition-all duration-300 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-8 lg:px-6 ${
+              className={`grid gap-6 px-4 pb-5 pt-5 transition-all duration-300 lg:grid-cols-[minmax(0,1fr)_220px] xl:grid-cols-[minmax(0,1fr)_260px] lg:gap-8 lg:px-6 ${
                 isOpen ? "translate-y-0 opacity-100 delay-300" : "pointer-events-none translate-y-2 opacity-0"
-              } md:w-[500px] lg:w-[760px] xl:w-[890px]`}
+              } md:w-[400px] lg:w-[540px] xl:w-[670px]`}
             >
               <div>
                 <h3 className="text-2xl font-semibold tracking-tight">{s.title}</h3>
@@ -151,5 +151,16 @@ const ART: ReactNode[] = [
     <circle cx="46" cy="70" r="6" fill="#fbc105" />
     <rect x="214" y="35" width="24" height="5" rx="2" fill="#666" />
     <rect x="214" y="99" width="24" height="5" rx="2" fill="#666" />
+  </svg>,
+  <svg key="agents" viewBox="0 0 280 140" width="100%" height="100%" aria-hidden>
+    <rect width="280" height="140" fill="#0d0d0d" />
+    <rect x="24" y="22" width="150" height="30" rx="15" fill="#1f1f1f" />
+    <rect x="38" y="34" width="100" height="6" rx="3" fill="#777" />
+    <rect x="104" y="62" width="152" height="30" rx="15" fill="#fbc105" />
+    <rect x="120" y="74" width="110" height="6" rx="3" fill="#000" />
+    <rect x="24" y="102" width="120" height="26" rx="13" fill="#1f1f1f" />
+    <circle cx="44" cy="115" r="3" fill="#fbc105" />
+    <circle cx="56" cy="115" r="3" fill="#fbc105" opacity=".6" />
+    <circle cx="68" cy="115" r="3" fill="#fbc105" opacity=".3" />
   </svg>,
 ];

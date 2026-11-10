@@ -79,10 +79,24 @@ export function Home({ lang }: { lang: Locale }) {
           <div className="h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
         </section>
 
-        <section id="servicos" className="mx-auto max-w-6xl scroll-mt-16 px-4 py-24 sm:px-6">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.services.title}</h2>
-          <div className="mt-10">
-            <ServiceCards items={t.services.items} />
+        <section
+          id="servicos"
+          className="mx-auto grid max-w-6xl scroll-mt-16 px-4 py-24 sm:px-6 lg:grid-cols-[104px_minmax(0,1fr)] lg:gap-6"
+        >
+          {/* Marca na vertical ao lado dos serviços, como na landing page. */}
+          <div
+            aria-hidden
+            className="hidden select-none items-end justify-center overflow-hidden font-logo text-[112px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 lg:flex"
+          >
+            <span>
+              <span className="font-extrabold">vidal</span>—tech
+            </span>
+          </div>
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.services.title}</h2>
+            <div className="mt-10">
+              <ServiceCards items={t.services.items} />
+            </div>
           </div>
         </section>
 
