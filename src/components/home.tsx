@@ -54,14 +54,13 @@ export function Home({ lang }: { lang: Locale }) {
                 {t.hero.titleStart} <span className="text-accent">{t.hero.titleAccent}</span>.
               </h1>
               <p className="max-w-xl text-lg leading-relaxed text-muted">{t.hero.text}</p>
-              {/* Baixa o catálogo no idioma da página. Os PDFs ficam na pasta
-                  catalogo/ da Hostinger, fora deste projeto. */}
+              {/* Baixa o catálogo no idioma da página. Os PDFs estão em
+                  public/catalogo e vão no zip para a pasta catalogo/ da Hostinger
+                  (a mesma que o e-mail automático do n8n usa). */}
               <div>
                 <a
                   href={t.hero.catalogFile}
                   download
-                  target="_blank"
-                  rel="noopener"
                   className="inline-flex items-center gap-2.5 rounded-full bg-accent py-3 pl-5 pr-6 font-semibold text-accent-ink transition hover:brightness-110"
                 >
                   <svg
@@ -88,11 +87,11 @@ export function Home({ lang }: { lang: Locale }) {
 
         <section id="servicos" className="relative scroll-mt-16">
           {/* Marca na vertical encostada na borda esquerda da tela, como na landing page,
-              no tamanho grande e centralizada na altura dos cartões (passa 40px em cima e embaixo).
+              no tamanho grande e centralizada na altura dos cartões (passa 60px em cima e 20px embaixo).
               Fica fora da coluna do conteúdo para os títulos continuarem alinhados. */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-3 top-[136px] hidden h-[480px] select-none items-end overflow-hidden font-logo text-[96px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 xl:flex"
+            className="pointer-events-none absolute left-3 top-[116px] hidden h-[480px] select-none items-end overflow-hidden font-logo text-[96px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 xl:flex"
           >
             <span>
               <span className="font-extrabold">vidal</span>—tech

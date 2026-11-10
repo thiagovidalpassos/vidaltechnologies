@@ -24,7 +24,7 @@ const pt = {
     titleAccent: "por você",
     text: "A Vidal Technologies cria sites, sistemas e automações para empresas que querem ganhar tempo e crescer com tecnologia.",
     catalog: "Baixar catálogo de serviços",
-    catalogFile: "https://vidaltechnologies.com.br/catalogo/vidal-technologies-apresentacao.pdf",
+    catalogFile: "/catalogo/vidal-technologies-apresentacao.pdf",
   },
   flow: {
     name: "qualificacao-de-leads",
@@ -163,7 +163,7 @@ const en: Dictionary = {
     titleAccent: "for you",
     text: "Vidal Technologies builds websites, systems and automations for companies that want to save time and grow with technology.",
     catalog: "Download service catalog",
-    catalogFile: "https://vidaltechnologies.com.br/catalogo/vidal-technologies-presentation-en.pdf",
+    catalogFile: "/catalogo/vidal-technologies-presentation-en.pdf",
   },
   flow: {
     name: "lead-qualification",
@@ -300,7 +300,7 @@ const es: Dictionary = {
     titleAccent: "por ti",
     text: "Vidal Technologies crea sitios web, sistemas y automatizaciones para empresas que quieren ganar tiempo y crecer con tecnología.",
     catalog: "Descargar catálogo de servicios",
-    catalogFile: "https://vidaltechnologies.com.br/catalogo/vidal-technologies-presentacion-es.pdf",
+    catalogFile: "/catalogo/vidal-technologies-presentacion-es.pdf",
   },
   flow: {
     name: "calificacion-de-leads",
