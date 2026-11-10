@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { Dictionary } from "@/i18n/dictionaries";
 
 type Service = Dictionary["services"]["items"][number];
@@ -9,29 +9,37 @@ type Service = Dictionary["services"]["items"][number];
 const INTERVAL = 6000;
 
 // Cartões numerados da seção Serviços, iguais aos da landing page: um fica
-// aberto em dourado e os outros fechados ao lado. Troca sozinho até a pessoa
-// clicar num cartão; quem pediu menos movimento no sistema troca só clicando.
+// aberto em dourado e os outros fechados ao lado. A troca automática só começa
+// quando a seção aparece na tela, sempre a partir do 01, e para quando ela sai.
+// Clicar num cartão abre ele na hora e a contagem recomeça dali. Quem pediu
+// menos movimento no sistema troca só clicando.
 export function ServiceCards({ items }: { items: Service[] }) {
+  const row = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(0);
-  const [auto, setAuto] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!auto || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const timer = setInterval(() => setOpen((o) => (o + 1) % items.length), INTERVAL);
-    return () => clearInterval(timer);
-  }, [auto, items.length]);
+    const el = row.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.4 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!visible || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = setTimeout(() => setOpen((o) => (o + 1) % items.length), INTERVAL);
+    return () => clearTimeout(timer);
+  }, [open, visible, items.length]);
 
   return (
-    <div className="flex flex-col gap-1.5 md:h-[400px] md:flex-row">
+    <div ref={row} className="flex flex-col gap-1.5 md:h-[400px] md:flex-row">
       {items.map((s, i) => {
         const isOpen = i === open;
         return (
           <article
             key={s.title}
-            onClick={() => {
-              setAuto(false);
-              setOpen(i);
-            }}
+            onClick={() => setOpen(i)}
             className={`group relative cursor-pointer overflow-hidden rounded-md border transition-all duration-500 ease-[cubic-bezier(.6,.1,.2,1)] ${
               isOpen
                 ? "h-[400px] border-accent bg-accent text-accent-ink sm:h-[340px] md:h-auto md:flex-1"

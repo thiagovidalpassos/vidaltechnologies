@@ -95,7 +95,7 @@ export function Home({ lang }: { lang: Locale }) {
           <div>
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.services.title}</h2>
             <div className="mt-10">
-              <ServiceCards items={t.services.items} />
+              <ServiceCards key={lang} items={t.services.items} />
             </div>
           </div>
         </section>
