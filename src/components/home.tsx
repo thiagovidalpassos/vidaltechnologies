@@ -76,18 +76,19 @@ export function Home({ lang }: { lang: Locale }) {
         </section>
 
         <section id="servicos" className="relative scroll-mt-16">
-          {/* Marca na vertical encostada na borda esquerda da tela, como na landing page,
-              no tamanho grande e centralizada na altura dos cartões (o mesmo tamanho e posição aprovados no Mac do Thiago).
-              Fica fora da coluna do conteúdo para os títulos continuarem alinhados. */}
+          {/* Marca na vertical, colada na borda esquerda da página, fora da
+              coluna do texto: assim o título "Serviços" fica alinhado com os
+              títulos das outras seções. Só aparece em telas largas, onde sobra
+              espaço ao lado do conteúdo. */}
           <div
             aria-hidden
-            className="pointer-events-none absolute left-3 top-[76px] hidden h-[560px] select-none items-end overflow-hidden font-logo text-[112px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 xl:flex"
+            className="pointer-events-none absolute left-2 top-[76px] hidden h-[560px] w-[104px] select-none items-center justify-center overflow-hidden font-logo text-[112px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 xl:flex"
           >
             <span>
               <span className="font-extrabold">vidal</span>—tech
             </span>
           </div>
-          <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
+          <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.services.title}</h2>
             <div className="mt-10">
               <ServiceCards key={lang} items={t.services.items} />
@@ -95,7 +96,7 @@ export function Home({ lang }: { lang: Locale }) {
           </div>
         </section>
 
-        <section id="como-trabalho" className="scroll-mt-16 border-y border-line/60 bg-surface/60">
+        <section id="como-trabalho" className="relative scroll-mt-16 overflow-hidden border-y border-line/60 bg-surface/60">
           <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.process.title}</h2>
             <ol className="mt-10 grid gap-10 md:grid-cols-3">
@@ -165,12 +166,12 @@ export function Home({ lang }: { lang: Locale }) {
         </section>
 
         <section id="contato" className="mx-auto max-w-6xl scroll-mt-16 px-4 pb-24 sm:px-6">
-          {/* Quadro em cinza claro, como o cartão "Projeto em destaque" da landing page. */}
-          <div className="relative overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#e9e9e9,#9b9b9b)] px-6 py-16 text-center text-[#111] sm:px-12">
+          {/* Quadro em cinza clarinho, como o cartão "Projeto em destaque" da landing page. */}
+          <div className="relative overflow-hidden rounded-3xl bg-[#e6e5e2] px-6 py-16 text-center text-[#111] sm:px-12">
             <h2 className="relative text-3xl font-semibold tracking-tight sm:text-4xl">
               {t.contact.title}
             </h2>
-            <p className="relative mx-auto mt-4 max-w-lg text-[#333]">{t.contact.text}</p>
+            <p className="relative mx-auto mt-4 max-w-lg text-[#555]">{t.contact.text}</p>
             <div className="relative mt-8 flex flex-wrap justify-center gap-3">
               <a
                 href="mailto:contato@vidaltechnologies.com.br"
@@ -182,7 +183,7 @@ export function Home({ lang }: { lang: Locale }) {
                 href={`https://wa.me/5541988779179?text=${encodeURIComponent(t.contact.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#111]/40 px-6 py-3 font-semibold transition hover:border-[#111]"
+                className="inline-flex items-center gap-2 rounded-full border border-black/20 px-6 py-3 font-semibold transition hover:border-[#25D366]"
               >
                 <WhatsAppIcon />
                 {t.contact.whatsapp}
