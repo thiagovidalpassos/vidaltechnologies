@@ -42,3 +42,13 @@ body {
   background: var(--accent);
   color: var(--accent-ink);
 }
+
+/* Barrinha que enche embaixo da etapa em destaque em "Como trabalhamos". */
+@keyframes process-bar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
