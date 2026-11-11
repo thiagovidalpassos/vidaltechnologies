@@ -121,7 +121,7 @@ const pt = {
       },
       {
         title: "Aplicação web completa",
-        text: "Sistema de ponta a ponta com API REST documentada no Swagger, banco Supabase/Postgres, telas em React e Next.js, validação com Zod e monitoramento de erros no Sentry.",
+        text: "Sistema sob medida para a sua empresa, do cadastro aos relatórios: rápido, seguro, fácil de usar e acompanhado de perto para não parar.",
         tags: ["React", "Next.js", "REST API", "Swagger", "Supabase", "PostgreSQL", "Zod", "Sentry"],
       },
       {
@@ -270,7 +270,7 @@ const en: Dictionary = {
       },
       {
         title: "Full web application",
-        text: "End-to-end system with a REST API documented in Swagger, a Supabase/Postgres database, React and Next.js screens, Zod validation and error monitoring with Sentry.",
+        text: "Custom system for your business, from sign-up to reports: fast, secure, easy to use and closely monitored so it keeps running.",
         tags: ["React", "Next.js", "REST API", "Swagger", "Supabase", "PostgreSQL", "Zod", "Sentry"],
       },
       {
@@ -417,7 +417,7 @@ const es: Dictionary = {
       },
       {
         title: "Aplicación web completa",
-        text: "Sistema de punta a punta con API REST documentada en Swagger, base de datos Supabase/Postgres, pantallas en React y Next.js, validación con Zod y monitoreo de errores con Sentry.",
+        text: "Sistema a medida para tu empresa, del registro a los informes: rápido, seguro, fácil de usar y monitoreado de cerca para que no se detenga.",
         tags: ["React", "Next.js", "REST API", "Swagger", "Supabase", "PostgreSQL", "Zod", "Sentry"],
       },
       {
