@@ -23,8 +23,8 @@ const pt = {
     titleStart: "Software que trabalha",
     titleAccent: "por você",
     text: "A Vidal Technologies cria sites, sistemas e automações para empresas que querem ganhar tempo e crescer com tecnologia.",
-    catalog: "Baixar catálogo de serviços",
-    catalogFile: "/catalogo/vidal-technologies-apresentacao.pdf",
+    primary: "Começar um projeto",
+    secondary: "Ver serviços",
   },
   flow: {
     name: "qualificacao-de-leads",
@@ -162,8 +162,8 @@ const en: Dictionary = {
     titleStart: "Software that works",
     titleAccent: "for you",
     text: "Vidal Technologies builds websites, systems and automations for companies that want to save time and grow with technology.",
-    catalog: "Download service catalog",
-    catalogFile: "/catalogo/vidal-technologies-presentation-en.pdf",
+    primary: "Start a project",
+    secondary: "See services",
   },
   flow: {
     name: "lead-qualification",
@@ -299,8 +299,8 @@ const es: Dictionary = {
     titleStart: "Software que trabaja",
     titleAccent: "por ti",
     text: "Vidal Technologies crea sitios web, sistemas y automatizaciones para empresas que quieren ganar tiempo y crecer con tecnología.",
-    catalog: "Descargar catálogo de servicios",
-    catalogFile: "/catalogo/vidal-technologies-presentacion-es.pdf",
+    primary: "Empezar un proyecto",
+    secondary: "Ver servicios",
   },
   flow: {
     name: "calificacion-de-leads",
