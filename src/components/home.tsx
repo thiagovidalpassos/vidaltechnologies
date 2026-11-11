@@ -4,6 +4,7 @@ import { Logo } from "@/components/logo";
 import { ProcessSteps } from "@/components/process-steps";
 import { ServiceCards } from "@/components/service-cards";
 import { StarField } from "@/components/star-field";
+import { TechLogo } from "@/components/tech-logo";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { dictionaries, htmlLang, localePath, type Locale } from "@/i18n/dictionaries";
@@ -134,8 +135,9 @@ export function Home({ lang }: { lang: Locale }) {
                   {p.tags.map((tag) => (
                     <li
                       key={tag}
-                      className="rounded-full border border-line px-3 py-1 font-mono text-xs text-accent"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-1 font-mono text-xs text-accent"
                     >
+                      <TechLogo name={tag} />
                       {tag}
                     </li>
                   ))}
