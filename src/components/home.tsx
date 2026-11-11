@@ -100,7 +100,7 @@ export function Home({ lang }: { lang: Locale }) {
         <section id="como-trabalho" className="relative scroll-mt-16 overflow-hidden border-y border-line/60 bg-surface/60">
           <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.process.title}</h2>
-            <ProcessSteps key={lang} steps={t.process.steps} />
+            <ProcessSteps steps={t.process.steps} />
           </div>
         </section>
 
