@@ -115,6 +115,16 @@ const pt = {
         tags: ["Next.js", "TypeScript", "Tailwind"],
       },
       {
+        title: "Landing page de campanha",
+        text: "Página única e rápida para captar contatos, com animações leves, seções de serviços e chamada direta para o WhatsApp.",
+        tags: ["HTML5", "CSS3", "JavaScript"],
+      },
+      {
+        title: "Aplicação web completa",
+        text: "Sistema sob medida para a sua empresa, do cadastro aos relatórios: rápido, seguro, fácil de usar e acompanhado de perto para não parar.",
+        tags: ["React", "Next.js", "REST API", "Swagger", "Supabase", "PostgreSQL", "Zod", "Sentry"],
+      },
+      {
         title: "Agente de atendimento no WhatsApp",
         text: "Agente de IA que responde clientes, qualifica pedidos e registra tudo no CRM.",
         tags: ["n8n", "LLM", "WhatsApp"],
@@ -254,6 +264,16 @@ const en: Dictionary = {
         tags: ["Next.js", "TypeScript", "Tailwind"],
       },
       {
+        title: "Campaign landing page",
+        text: "Fast single page built to capture leads, with light animations, service sections and a direct WhatsApp call to action.",
+        tags: ["HTML5", "CSS3", "JavaScript"],
+      },
+      {
+        title: "Full web application",
+        text: "Custom system for your business, from sign-up to reports: fast, secure, easy to use and closely monitored so it keeps running.",
+        tags: ["React", "Next.js", "REST API", "Swagger", "Supabase", "PostgreSQL", "Zod", "Sentry"],
+      },
+      {
         title: "WhatsApp support agent",
         text: "AI agent that answers customers, qualifies requests and logs everything in the CRM.",
         tags: ["n8n", "LLM", "WhatsApp"],
@@ -389,6 +409,16 @@ const es: Dictionary = {
         title: "Sitio institucional multilingüe",
         text: "Sitio rápido en portugués, inglés y español, con flujo animado y contacto por WhatsApp.",
         tags: ["Next.js", "TypeScript", "Tailwind"],
+      },
+      {
+        title: "Landing page de campaña",
+        text: "Página única y rápida para captar contactos, con animaciones ligeras, secciones de servicios y llamada directa a WhatsApp.",
+        tags: ["HTML5", "CSS3", "JavaScript"],
+      },
+      {
+        title: "Aplicación web completa",
+        text: "Sistema a medida para tu empresa, del registro a los informes: rápido, seguro, fácil de usar y monitoreado de cerca para que no se detenga.",
+        tags: ["React", "Next.js", "REST API", "Swagger", "Supabase", "PostgreSQL", "Zod", "Sentry"],
       },
       {
         title: "Agente de atención en WhatsApp",
