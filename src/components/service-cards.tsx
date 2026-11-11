@@ -134,16 +134,16 @@ export function ServiceCards({ items }: { items: Service[] }) {
       {/* Pontinhos embaixo, como na landing page: o dourado mostra qual
         serviço está aberto e avança junto com a troca automática. */}
       <div className="mt-6 flex justify-center">
-        <div className="flex gap-2 rounded-full bg-[#1e1e1e]/80 px-3 py-2">
+        <div className="flex items-center gap-2.5 rounded-full bg-white/15 px-3.5 py-2.5">
           {items.map((s, i) => (
             <button
               key={s.title}
               type="button"
-              aria-label={s.title}
-              aria-current={i === open}
+              aria-label={`${String(i + 1).padStart(2, "0")} ${s.title}`}
+              aria-current={i === open ? "true" : undefined}
               onClick={() => setOpen(i)}
-              className={`h-2 w-2 rounded-full transition-colors duration-300 ${
-                i === open ? "bg-accent" : "bg-[#5a5a5a] hover:bg-[#888]"
+              className={`h-2.5 w-2.5 rounded-full transition-colors duration-500 ${
+                i === open ? "bg-accent" : "bg-white/80 hover:bg-white"
               }`}
             />
           ))}
