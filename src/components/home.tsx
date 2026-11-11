@@ -45,10 +45,6 @@ export function Home({ lang }: { lang: Locale }) {
 
       <main className="flex-1">
         <section className="relative overflow-hidden">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-accent/20 blur-[140px]"
-          />
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-24 sm:px-6 md:py-28 lg:grid-cols-[1fr_1.15fr]">
             <div className="flex flex-col gap-8">
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
@@ -79,23 +75,22 @@ export function Home({ lang }: { lang: Locale }) {
           <div className="h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
         </section>
 
-        <section
-          id="servicos"
-          className="mx-auto grid max-w-6xl scroll-mt-16 px-4 py-24 sm:px-6 lg:grid-cols-[104px_minmax(0,1fr)] lg:gap-6"
-        >
-          {/* Marca na vertical ao lado dos serviços, como na landing page. */}
+        <section id="servicos" className="relative scroll-mt-16">
+          {/* Marca na vertical encostada na borda esquerda da tela, como na landing page,
+              no tamanho grande e centralizada na altura dos cartões (o mesmo tamanho e posição aprovados no Mac do Thiago).
+              Fica fora da coluna do conteúdo para os títulos continuarem alinhados. */}
           <div
             aria-hidden
-            className="hidden select-none items-end justify-center overflow-hidden font-logo text-[112px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 lg:flex"
+            className="pointer-events-none absolute left-3 top-[76px] hidden h-[560px] select-none items-end overflow-hidden font-logo text-[112px] font-light leading-[0.8] tracking-tight text-[#262626] [writing-mode:vertical-rl] rotate-180 xl:flex"
           >
             <span>
               <span className="font-extrabold">vidal</span>—tech
             </span>
           </div>
-          <div>
+          <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.services.title}</h2>
             <div className="mt-10">
-              <ServiceCards items={t.services.items} />
+              <ServiceCards key={lang} items={t.services.items} />
             </div>
           </div>
         </section>
@@ -170,15 +165,12 @@ export function Home({ lang }: { lang: Locale }) {
         </section>
 
         <section id="contato" className="mx-auto max-w-6xl scroll-mt-16 px-4 pb-24 sm:px-6">
-          <div className="relative overflow-hidden rounded-3xl border border-line bg-surface-2 px-6 py-16 text-center sm:px-12">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -bottom-32 left-1/2 h-64 w-[640px] -translate-x-1/2 rounded-full bg-accent/25 blur-[100px]"
-            />
+          {/* Quadro em cinza claro, como o cartão "Projeto em destaque" da landing page. */}
+          <div className="relative overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#e9e9e9,#9b9b9b)] px-6 py-16 text-center text-[#111] sm:px-12">
             <h2 className="relative text-3xl font-semibold tracking-tight sm:text-4xl">
               {t.contact.title}
             </h2>
-            <p className="relative mx-auto mt-4 max-w-lg text-muted">{t.contact.text}</p>
+            <p className="relative mx-auto mt-4 max-w-lg text-[#333]">{t.contact.text}</p>
             <div className="relative mt-8 flex flex-wrap justify-center gap-3">
               <a
                 href="mailto:contato@vidaltechnologies.com.br"
@@ -190,7 +182,7 @@ export function Home({ lang }: { lang: Locale }) {
                 href={`https://wa.me/5541988779179?text=${encodeURIComponent(t.contact.whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 font-semibold transition hover:border-[#25D366]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#111]/40 px-6 py-3 font-semibold transition hover:border-[#111]"
               >
                 <WhatsAppIcon />
                 {t.contact.whatsapp}
