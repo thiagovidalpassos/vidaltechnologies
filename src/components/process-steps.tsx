@@ -3,34 +3,23 @@ import type { Dictionary } from "@/i18n/dictionaries";
 
 type Step = Dictionary["process"]["steps"][number];
 
-// Etapas da seção "Como trabalhamos": bolinhas 01, 02 e 03 ligadas por uma
-// linha dourada, cada uma com um quadro com ícone, título e texto. É estático;
-// só a borda do quadro fica dourada quando o mouse passa por cima.
+// Etapas da seção "Como trabalhamos": um quadro por etapa, com ícone, título
+// e texto. É estático; só a borda fica dourada quando o mouse passa por cima.
 export function ProcessSteps({ steps }: { steps: Step[] }) {
   return (
-    <ol className="relative mt-12 grid gap-6 md:grid-cols-3 md:gap-5">
-      {/* Linha que liga as etapas: na horizontal no computador, na vertical no celular.
-          No computador ela vai do centro da bolinha 01 ao da 03. */}
-      <span
-        aria-hidden
-        className="absolute bottom-7 left-[27px] top-7 w-px bg-accent/60 md:bottom-auto md:left-7 md:right-[calc((100%-40px)/3-28px)] md:h-px md:w-auto"
-      />
-
+    <ol className="mt-10 grid gap-5 md:grid-cols-3">
       {steps.map((s, i) => (
-        <li key={s.title} className="group relative flex gap-5 md:flex-col md:gap-6">
-          <span className="relative z-[1] flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-accent bg-accent font-mono text-sm text-accent-ink shadow-[0_0_24px_rgba(251,193,5,0.35)]">
-            {String(i + 1).padStart(2, "0")}
-          </span>
-
-          <div className="flex flex-1 flex-col gap-3 rounded-2xl border border-line/60 bg-surface-2 p-6 transition-colors group-hover:border-accent/60">
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 text-accent">
-                {ICONS[i]}
-              </span>
-              <h3 className="text-xl font-semibold">{s.title}</h3>
-            </div>
-            <p className="leading-relaxed text-muted">{s.text}</p>
+        <li
+          key={s.title}
+          className="flex flex-col gap-3 rounded-2xl border border-line/60 bg-surface-2 p-6 transition-colors hover:border-accent/60"
+        >
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/15 text-accent">
+              {ICONS[i]}
+            </span>
+            <h3 className="text-xl font-semibold">{s.title}</h3>
           </div>
+          <p className="leading-relaxed text-muted">{s.text}</p>
         </li>
       ))}
     </ol>
