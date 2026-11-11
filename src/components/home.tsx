@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AutomationFlow } from "@/components/automation-flow";
 import { Logo } from "@/components/logo";
+import { ProcessSteps } from "@/components/process-steps";
 import { ServiceCards } from "@/components/service-cards";
 import { StarField } from "@/components/star-field";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
@@ -99,17 +100,7 @@ export function Home({ lang }: { lang: Locale }) {
         <section id="como-trabalho" className="relative scroll-mt-16 overflow-hidden border-y border-line/60 bg-surface/60">
           <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t.process.title}</h2>
-            <ol className="mt-10 grid gap-10 md:grid-cols-3">
-              {t.process.steps.map((s, i) => (
-                <li key={s.title} className="flex flex-col gap-2">
-                  <span className="font-mono text-sm text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="text-xl font-semibold">{s.title}</h3>
-                  <p className="leading-relaxed text-muted">{s.text}</p>
-                </li>
-              ))}
-            </ol>
+            <ProcessSteps steps={t.process.steps} />
           </div>
         </section>
 
